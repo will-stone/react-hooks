@@ -11,7 +11,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "tsdx lint"
+    "lint": "tsdx lint",
+    "prepublishOnly": "rimraf dist && yarn build"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -33,6 +34,7 @@
     "husky": "^3.0.8",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
+    "rimraf": "^3.0.0",
     "tsdx": "^0.9.3",
     "tslib": "^1.10.0",
     "typescript": "^3.6.3"
