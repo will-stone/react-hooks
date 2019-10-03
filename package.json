@@ -1,18 +1,20 @@
 {
-  "name": "@will-stone/react-use-on-off",
+  "name": "@will-stone/react-hooks",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "module": "dist/useonoff.esm.js",
+  "module": "dist/react-hooks.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
+    "cleanup": "rimraf dist",
     "start": "tsdx watch",
+    "prebuild": "yarn cleanup",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
     "lint": "tsdx lint",
-    "prepublishOnly": "rimraf dist && yarn build"
+    "prepublishOnly": "yarn cleanup && yarn build"
   },
   "peerDependencies": {
     "react": ">=16"
