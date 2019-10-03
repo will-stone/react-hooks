@@ -1,5 +1,9 @@
 import * as React from 'react'
 
+/**
+ * A custom React hook for easily toggling a boolean
+ * @param init initial isOn value
+ */
 export const useOnOff = (
   init = false,
 ): {
