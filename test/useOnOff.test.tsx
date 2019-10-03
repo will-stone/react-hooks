@@ -10,6 +10,7 @@ test('useOnOff', async () => {
   const navLink = getByText('useOnOff')
   fireEvent.click(navLink)
 
+  // Wait for page change
   const onBtn = await waitForElement(() => getByText('Set On'))
   const offBtn = getByText('Set Off')
   const toggleBtn = getByText('Toggle')
