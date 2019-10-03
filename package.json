@@ -1,6 +1,6 @@
 {
   "name": "@will-stone/react-hooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsdx build",
@@ -16,7 +16,7 @@
     "dist"
   ],
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=16.8"
   },
   "devDependencies": {
     "@testing-library/react": "^9.2.0",
