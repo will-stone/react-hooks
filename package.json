@@ -57,5 +57,5 @@
   },
   "module": "dist/react-hooks.esm.js",
   "prettier": "@will-stone/prettier-config",
-  "typings": "dist/index.d.ts"
+  "types": "dist/index.d.ts"
 }
