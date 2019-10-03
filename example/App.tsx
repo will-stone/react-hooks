@@ -1,19 +1,17 @@
-import 'react-app-polyfill/ie11'
-
+import { Link, Router } from '@reach/router'
 import * as React from 'react'
 
-import { useOnOff } from '../src/index'
+import { UseOnOff } from './pages/UseOnOff'
 
-export const App = () => {
-  const { isOn, setOff, setOn, toggle } = useOnOff()
+export const App: React.FC = () => {
   return (
     <div>
-      <div>
-        <button onClick={setOn}>Set On</button>
-        <button onClick={setOff}>Set Off</button>
-        <button onClick={toggle}>Toggle</button>
-      </div>
-      <div>is on: {isOn ? 'true' : 'false'}</div>
+      <nav>
+        <Link to="/use-on-off">useOnOff</Link>
+      </nav>
+      <Router>
+        <UseOnOff path="/use-on-off" />
+      </Router>
     </div>
   )
 }

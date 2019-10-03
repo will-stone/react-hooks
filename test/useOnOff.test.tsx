@@ -1,12 +1,16 @@
-import { fireEvent, render } from '@testing-library/react'
+import { fireEvent, render, waitForElement } from '@testing-library/react'
 import * as React from 'react'
 
 import { App } from '../example/App'
 
-test('On/Off/Toggle', () => {
+test('On/Off/Toggle', async () => {
   const { getByText } = render(<App />)
 
-  const onBtn = getByText('Set On')
+  // Navigate to hook's page
+  const navLink = getByText('useOnOff')
+  fireEvent.click(navLink)
+
+  const onBtn = await waitForElement(() => getByText('Set On'))
   const offBtn = getByText('Set Off')
   const toggleBtn = getByText('Toggle')
 
