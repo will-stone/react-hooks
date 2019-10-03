@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { App } from '../example/App'
 
-test('On/Off/Toggle', async () => {
+test('useOnOff', async () => {
   const { getByText } = render(<App />)
 
   // Navigate to hook's page
