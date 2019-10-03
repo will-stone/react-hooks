@@ -2,29 +2,22 @@
   "name": "@will-stone/react-hooks",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "module": "dist/react-hooks.esm.js",
-  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsdx build",
+    "cleanup": "rimraf dist",
+    "lint": "tsdx lint",
+    "prebuild": "yarn cleanup",
+    "prepublishOnly": "yarn cleanup && yarn build",
+    "pretty-package": "prettier --write package.json",
+    "start": "tsdx watch",
+    "test": "tsdx test --env=jsdom"
+  },
   "files": [
     "dist"
   ],
-  "scripts": {
-    "cleanup": "rimraf dist",
-    "start": "tsdx watch",
-    "prebuild": "yarn cleanup",
-    "build": "tsdx build",
-    "test": "tsdx test --env=jsdom",
-    "lint": "tsdx lint",
-    "prepublishOnly": "yarn cleanup && yarn build"
-  },
   "peerDependencies": {
     "react": ">=16"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
-  "prettier": "@will-stone/prettier-config",
   "devDependencies": {
     "@testing-library/react": "^9.2.0",
     "@types/jest": "^24.0.18",
@@ -34,6 +27,7 @@
     "eslint-config-react-app": "5.0.1",
     "eslint-plugin-simple-import-sort": "^4.0.0",
     "husky": "^3.0.8",
+    "prettier-plugin-package": "^0.3.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
     "rimraf": "^3.0.0",
@@ -55,5 +49,13 @@
       "prettier/prettier": "error",
       "simple-import-sort/sort": "error"
     }
-  }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint && yarn pretty-package && git add package.json"
+    }
+  },
+  "module": "dist/react-hooks.esm.js",
+  "prettier": "@will-stone/prettier-config",
+  "typings": "dist/index.d.ts"
 }
