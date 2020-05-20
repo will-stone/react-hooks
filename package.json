@@ -29,7 +29,7 @@
     "@types/react-dom": "^16.9.1",
     "@will-stone/prettier-config": "^1.0.0",
     "eslint-config-react-app": "5.0.1",
-    "eslint-plugin-simple-import-sort": "^4.0.0",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
     "husky": "^3.0.8",
     "prettier-plugin-package": "^0.3.1",
     "react": "^16.10.1",
