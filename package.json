@@ -15,7 +15,6 @@
     "prebuild": "rimraf ./pkg",
     "build": "pika build",
     "lint": "eslint . --ignore-path .gitignore",
-    "prerelease": "yarn build",
     "release": "np",
     "test": "jest",
     "typecheck": "tsc --noEmit --skipLibCheck",
