@@ -14,7 +14,8 @@
     "prepublishOnly": "yarn cleanup && yarn build",
     "pretty-package": "prettier --write package.json",
     "start": "tsdx watch",
-    "test": "tsdx test --env=jsdom"
+    "test": "tsdx test --env=jsdom",
+    "typecheck": "tsc --noEmit --skipLibCheck"
   },
   "files": [
     "dist"
