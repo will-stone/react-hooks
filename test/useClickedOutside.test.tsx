@@ -1,36 +1,36 @@
-import { fireEvent, render, waitForElement } from '@testing-library/react'
+import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import * as React from 'react'
 
-import { App } from '../example/App'
+import { App } from './App'
 
 test('useClickedOutside', async () => {
-  const { getByText, queryByText } = render(<App />)
+  render(<App />)
 
   // Navigate to hook's page
-  const navLink = getByText('useClickedOutside')
+  const navLink = screen.getByText('useClickedOutside')
   fireEvent.click(navLink)
 
   // Wait for page change
-  const toggleBtn = await waitForElement(() => getByText('Toggle'))
+  const toggleButton = await waitFor(() => screen.getByText('Toggle'))
   const toggleTxt = 'Click outside this element to hide this text.'
 
   // Hidden
-  expect(queryByText(toggleTxt)).toBeFalsy()
+  expect(screen.queryByText(toggleTxt)).toBeFalsy()
 
   // Show
-  fireEvent.click(toggleBtn)
-  getByText(toggleTxt)
+  fireEvent.click(toggleButton)
+  screen.getByText(toggleTxt)
 
   // Hide
-  fireEvent.click(toggleBtn)
-  expect(queryByText(toggleTxt)).toBeFalsy()
+  fireEvent.click(toggleButton)
+  expect(screen.queryByText(toggleTxt)).toBeFalsy()
 
   // Show
-  fireEvent.click(toggleBtn)
-  getByText(toggleTxt)
+  fireEvent.click(toggleButton)
+  screen.getByText(toggleTxt)
 
   // Hide (by clicking outside element)
-  const outsideTxt = getByText('I am outside the box.')
+  const outsideTxt = screen.getByText('I am outside the box.')
   fireEvent.click(outsideTxt)
-  expect(queryByText(toggleTxt)).toBeFalsy()
+  expect(screen.queryByText(toggleTxt)).toBeFalsy()
 })

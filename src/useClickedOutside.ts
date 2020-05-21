@@ -9,15 +9,20 @@ export function useClickedOutside<Element extends HTMLElement>(
   callback: (e: Event) => void,
 ): RefObject<Element> {
   // Set-up the reference that'll be used to refer to the component.
-  const ref = useRef<Element>(null)
+  // eslint-disable-next-line unicorn/no-null -- null must be used here as a ref can only be Element | null
+  const reference = useRef<Element>(null)
 
   useEffect(() => {
-    const handleClick: EventListener = event => {
+    const handleClick: EventListener = (event) => {
       // Not clicked on this component nor its children.
-      if (!ref.current || !ref.current.contains(event.target as Node)) {
+      if (
+        !reference.current ||
+        !reference.current.contains(event.target as Node)
+      ) {
         callback(event)
       }
     }
+
     // Create event listener when mounting the component.
     document.addEventListener('click', handleClick, true)
     return () => {
@@ -26,5 +31,5 @@ export function useClickedOutside<Element extends HTMLElement>(
     }
   }, [callback])
 
-  return ref
+  return reference
 }
