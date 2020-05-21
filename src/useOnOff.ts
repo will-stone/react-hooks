@@ -8,9 +8,9 @@ export const useOnOff = (
   init = false,
 ): {
   isOn: boolean
-  setOn(): void
-  setOff(): void
-  toggle(): void
+  setOn: () => void
+  setOff: () => void
+  toggle: () => void
 } => {
   const [isOn, set] = React.useState<boolean>(init)
 
