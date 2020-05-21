@@ -1,6 +1,6 @@
 {
   "name": "@will-stone/react-hooks",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A collection of custom hooks for React",
   "repository": "https://github.com/will-stone/react-hooks",
   "license": "MIT",
