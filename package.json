@@ -44,9 +44,12 @@
     ]
   },
   "jest": {
+    "modulePathIgnorePatterns": [
+      "<rootDir>/pkg"
+    ],
     "preset": "ts-jest",
     "setupFilesAfterEnv": [
-      "./setupFilesAfterEnv.ts"
+      "<rootDir>/setupFilesAfterEnv.ts"
     ]
   },
   "devDependencies": {
