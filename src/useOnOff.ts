@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { useState } from 'react'
 
 /**
  * A custom React hook for easily toggling a boolean
@@ -12,7 +12,7 @@ export const useOnOff = (
   setOff: () => void
   toggle: () => void
 } => {
-  const [isOn, set] = React.useState<boolean>(init)
+  const [isOn, set] = useState<boolean>(init)
 
   const setOn = () => set(true)
   const setOff = () => set(false)
