@@ -84,7 +84,8 @@
     "react": ">=16.13"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "@pika/pack": {
     "pipeline": [
