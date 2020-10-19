@@ -6,7 +6,7 @@ import { RefObject, useEffect, useRef } from 'react'
  * @returns a ref to be applied to the target element.
  */
 export function useClickedOutside<Element extends HTMLElement>(
-  callback: (e: Event) => void,
+  callback: (event: Event) => void,
 ): RefObject<Element> {
   // Set-up the reference that'll be used to refer to the component.
   // eslint-disable-next-line unicorn/no-null -- null must be used here as a ref can only be Element | null
